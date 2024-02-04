@@ -61,8 +61,8 @@ const Trending = ()=>{
             const parsedResponce = await responce.json()
 
             if(responce.status===200){
-                // setTrendingMovies(responce.data.results)
-                console.log(parsedResponce)
+              
+                console.log("trending",parsedResponce)
                 setTrendingMovies(parsedResponce.results)
             }
             else{
@@ -78,18 +78,18 @@ const Trending = ()=>{
     },[timeWindow])
     return(
 
-        <div className="overflow-hidden mb-7">
+        <div className="overflow-hidden pt-10 pb-16 bg-black">
             <div className="flex mx-auto w-[90%] mt-5">
-                <h2 className="text-black font-bold text-3xl"> Trending</h2>
-                <div className="flex border-2 border-[#032541] rounded-2xl md:ml-[4vw] ml-auto">
-                    <button className={`text-md border-2 rounded-xl px-4 py-0 border-none outline-none ${timeWindow === 'day' ? 'bg-[#032541] text-[#ADF9CA]' : 'bg-white'} hover:text-[#66ddef] `} onClick={dayTrendChange}>Toady</button>
-                    <button className={`text-md border-2 rounded-xl px-4 py-0 border-none outline-none ${timeWindow === 'week' ? 'bg-[#032541] text-[#ADF9CA]' : 'bg-white'} hover:text-[#66ddef] `} onClick={WeekTrendChange}>This Week</button>
+                <h2 className="text-white font-bold text-3xl border-l-2 border-[#FFD633] pl-1"> Trending</h2>
+                <div className="flex border-2 border-[#FFD633] rounded-2xl md:ml-[4vw] ml-auto">
+                    <button className={`text-md border-2 rounded-xl px-4 py-0 border-none outline-none ${timeWindow === 'day' ? 'bg-[#FFD633] text-white' : 'bg-black text-white'} hover:text-[#66ddef] `} onClick={dayTrendChange}>Toady</button>
+                    <button className={`text-md border-2 rounded-xl px-4 py-0 border-none outline-none ${timeWindow === 'week' ? 'bg-[#FFD633] text-white' : 'bg-black text-white'} hover:text-[#66ddef] `} onClick={WeekTrendChange}>This Week</button>
                 </div>
             </div>
             <Slider {...settings}>
                     {trendingMovies?.map((movie)=>{
                         return <NavLink to={`/details/${movie.media_type}/${movie.id}`} className="flex mx-auto" key={movie.id}>
-                            <Card key={movie.id} title={movie.title} releaseDate={movie.release_date} image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
+                            <Card key={movie.id} title={movie.title} releaseDate={movie.release_date} image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} color={"text-white"}/>
                         </NavLink>
                     })}
                 

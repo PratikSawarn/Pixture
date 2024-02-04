@@ -17,7 +17,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-[#032541]">
+    <nav className="bg-black sticky top-0 z-20">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -44,11 +44,7 @@ const Navbar = () => {
                   d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
               </svg>
-              {/* <!--
-            Icon when menu is open.
-
-            Menu open: "block", Menu closed: "hidden"
-          --> */}
+             
               <svg
                 className="hidden h-6 w-6"
                 fill="none"
@@ -64,10 +60,10 @@ const Navbar = () => {
                 />
               </svg>
             </button>
-          </div> {/*text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500*/}
+          </div> 
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <h1 href="/" className=" text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#87CCA4] to-[#30BCCF] cursor-pointer">PIXTURE</h1>
+              <h1 href="/" className=" text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FFD633] to-[#FFD633] cursor-pointer">PIXTURE</h1>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
@@ -115,6 +111,9 @@ const Navbar = () => {
                 </div>
                 
               </div>
+            </div>
+            <div className="text-white text-right absolute right-4">
+              <Link className="bg-[#FFD633] py-1 px-3 rounded-sm font-semibold">Login</Link>
             </div>
           </div>
         </div>

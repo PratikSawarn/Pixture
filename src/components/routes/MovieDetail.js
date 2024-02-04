@@ -178,7 +178,7 @@ const MovieDetail =()=> {
                     <h2 className="text-black font-bold text-3xl">Top Billed Cast</h2>
                     
                 </div>
-                <div className='w-full flex flex-row overflow-x-auto overflow-y-hidden'>
+                <div className='w-full flex flex-row overflow-x-auto overflow-y-hidden py-5'>
                         {FetchedCredits.cast?.map((credit)=>{
                             return <NavLink className="flex mx-5" key={credit.id}>
                                 <Card key={credit.id} title={credit.name} releaseDate={credit.character} image={credit.profile_path ?(`https://image.tmdb.org/t/p/w500${credit.profile_path}`):"https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-4-user-grey-d8fe957375e70239d6abdd549fd7568c89281b2179b5f4470e2e12895792dfa5.svg"}/>
@@ -207,7 +207,7 @@ const MovieDetail =()=> {
                     
                 </Slider>
             </div>
-        ):<p className='text-center text-2xl p-20'>Loading</p>}
+        ):<p className='text-center text-2xl p-20'>Loading..</p>}
         
     </section>
     </>
@@ -215,8 +215,3 @@ const MovieDetail =()=> {
 }
 
 export default MovieDetail
-
-
-// for background image
-
-// https://media.themoviedb.org/t/p/w300_and_h450_multi_faces_filter(blur)/rSAmgcoA74371rplbqM27yVsd3y.jpg

@@ -73,23 +73,23 @@ const Watch = ()=>{
     },[type])
     return(
 
-        <div className="overflow-hidden mb-7">
+        <div className="overflow-hidden pt-10 pb-10 bg-black">
             <div className="flex mx-auto w-[90%] mt-5">
-                <h2 className="text-black font-bold text-3xl"> Watch</h2>
-                <div className="flex border-2 border-[#032541] rounded-2xl md:ml-[4vw] ml-auto">
-                    <button className={`text-md border-2 rounded-xl px-4 py-0 border-none outline-none font-medium ${type === 'tv' ? 'bg-[#73EBBD] text-[#032541] font-normal hover:text-white' : 'bg-transparent'} hover:text-[#73EBBD] `} onClick={()=>{changeOnClick("tv")}}>Tv</button>
-                    <button className={`text-md border-2 rounded-xl px-4 py-0 border-none outline-none font-medium ${type === 'movie' ? 'bg-[#73EBBD] text-[#032541] font-normal hover:text-white' : 'bg-transparent'} hover:text-[#73EBBD] `} onClick={()=>{changeOnClick("movie")}}>Movie</button>
+                <h2 className="text-white font-bold text-3xl"> Watch</h2>
+                <div className="flex border-2 border-[#FFD633] rounded-2xl md:ml-[4vw] ml-auto">
+                    <button className={`text-md border-2 rounded-xl px-4 py-0 border-none outline-none font-medium ${type === 'tv' ? 'bg-[#FFD633] text-[#032541] font-normal hover:text-white' : 'bg-transparent text-white'} hover:text-[#73EBBD] `} onClick={()=>{changeOnClick("tv")}}>Tv</button>
+                    <button className={`text-md border-2 rounded-xl px-4 py-0 border-none outline-none font-medium ${type === 'movie' ? 'bg-[#FFD633] text-[#032541] font-normal hover:text-white' : 'bg-transparent text-white'} hover:text-[#73EBBD] `} onClick={()=>{changeOnClick("movie")}}>Movie</button>
                 </div>
             </div>
             <Slider {...settings}>
                     {trendingMovies?.map((movie)=>{
-                        return <NavLink to={`/details/${movie.media_type}/${movie.id}`} className="flex mx-auto" key={movie.id}>
-                            <Card key={movie.id} title={movie.name} releaseDate={movie.release_date} image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
+                        return <NavLink to={`/details/${type}/${movie.id}`} className="flex mx-auto" key={movie.id}>
+                            <Card key={movie.id} title={movie.name} releaseDate={movie.release_date} image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} color={"text-white"}/>
                         </NavLink>
                     })}
                 
             </Slider>
-      </div>
+        </div>
     )
 
 }
